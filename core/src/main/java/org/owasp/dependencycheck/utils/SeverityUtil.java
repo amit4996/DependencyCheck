@@ -92,6 +92,9 @@ public final class SeverityUtil {
      * represent a critical severity.
      */
     public static String unscoredToSeveritytext(final String severity) {
+        if (severity == null) {
+            return "Unknown (null severity)";
+        }
         switch (Severity.forUnscored(severity)) {
             case CRITICAL:
             case HIGH:
